@@ -1,0 +1,171 @@
+Contents:
+Introduction to Array
+Array and JSON iteration
+XMLHttpRequest
+Hoisting & scope
+
+Array :-
+=>Collection of datatypes
+=>It will be in sequence manner.
+=>Enclosed within []
+=>Index always starts with 0
+=>To print the values inside the array we have use
+arrayname[indexvalue]
+=>To find the length dynamically we have to use
+arrayname.length
+=>To find the last index in an array we have to use
+arrayname.length-1
+
+Example:- 
+var a =[1,2,3,"abc",true]
+for(var i=0;i<a.length;i=i+1){
+    console.log(a[i]);
+}
+
+Objects:- 
+=>Objects are structure with key value pair
+=> Objects do not have index
+syntax:- 
+var/let/const objectname = {
+    keyname:value
+}
+=> Accessing the element inside the object we have 2 methods
+1.Dot method
+2.Box method
+=>Dot method
+syntax:-
+Objectname.Keyname
+=>Box method
+synatx:-
+Objectname["Keyname"]
+
+=>Example
+/*
+!Objects example using dot method
+var person = {
+    name:"rupan",
+    age:15,
+    Gender:"Male",
+    Phonenumber:9876543210,
+    Skills:["Javascript","Html","Css","Reactjs","MongoDb","Nodejs","Expressjs"]
+}
+console.log(person);
+console.log(person.name);
+console.log(person.age);
+console.log(person.Gender);
+console.log(person.Phonenumber);
+for(var i=0;i<person.Skills.length;i=i+1)
+{
+    console.log(person.Skills[i]);
+}
+*/
+/*
+!Objects example using box method
+var person = {
+  name: "rupan",
+  age: 15,
+  Gender: "Male",
+  Phonenumber: 9876543210,
+  Skills: [
+    "Javascript",
+    "Html",
+    "Css",
+    "Reactjs",
+    "MongoDb",
+    "Nodejs",
+    "Expressjs",
+  ],
+};
+console.log(person);
+console.log(person["name"]);
+console.log(person["age"]);
+console.log(person["Gender"]);
+console.log(person["Phonenumber"]);
+console.log(person["Skills"]);
+for (var i = 0; i < person["Skills"].length; i = i + 1) {
+  console.log(person["Skills"][i]);
+}
+*/
+=>For in loop
+syntax:-
+for(var key in objectname){
+    //block of code
+}
+=>For of loop
+syntax:-
+for(varaible of iterable){
+    //block of code
+}
+//Object example using For in and for of
+var person = {
+    name:"rupan",
+    age:15,
+    Gender:"Male",
+    Phonenumber:9876543210,
+    Skills:["Javascript","Html","Css","Reactjs","MongoDb","Nodejs","Expressjs"]
+}
+console.log(person);
+for (var key in person ){
+    console.log(person[key])
+}
+for(var a of person.Skills)
+{
+    console.log(a);
+}
+
+
+=>Adding,updating,Deleting the elements in objects
+Adding a new element in object
+syntax:- Objectname.keyname = value
+Updating the existing element in object
+syntax:- Objectname.keyname = value
+Deleting the element in object
+syntax:- delete objectname.keyname
+
+Example
+
+var movie ={
+     Title:"Leo",
+     Hero:"Vijay",
+     Heroine:"Trisa",
+     Director:"Lokesh Kanagaraj",
+     Imdbrating:7.5,
+     Budget:500,
+     Cast:["GVM","Arjun","Myskin","Sandy","Janani","Madanona","Sanjay dutt"]
+}
+//*Adding element in object
+movie.Cast[7]="Mansoor Ali Khan"
+movie.specialappearance = "subramani"
+movie.Languages = ["Tamil","Telugu","Malayalam","Hindi","English"]
+//?Updating the element in object
+movie.Budget="500cr"
+//!Deleting the element in object
+delete movie.Imdbrating
+console.log(movie);
+
+
+JSON:- 
+=>Javascript Object Notation
+syntax:
+var/let/const objectname = {
+    "keyname":"value"
+}
+example:- 
+var person = {
+    "name": "rupan",
+    "age":"15",
+    "Gender":"male"
+}
+example 1
+var person = {
+    name: "rupan",
+    age:15,
+    Gender:"male"
+}
+var b =JSON.stringify(person);
+console.log(b);
+var c = JSON.parse(b)
+console.log(c);
+
+//Array Of Objects
+[{},{},{}]
